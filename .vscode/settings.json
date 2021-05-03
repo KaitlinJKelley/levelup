@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "levelup",
+            "database": "levelup.db"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "levelupapi",
+            "database": "db.sqlite3"
+        }
+    ]
+}
