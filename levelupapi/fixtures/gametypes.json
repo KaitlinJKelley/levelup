@@ -1,23 +1,30 @@
 [
     {
-        "model": "levelupapi.game_type",
+        "model": "levelupapi.gametype",
         "pk": 1,
         "fields": {
             "name": "Board game"
         }
     },
     {
-        "model": "levelupapi.game_type",
+        "model": "levelupapi.gametype",
         "pk": 2,
         "fields": {
             "name": "Role-playing game"
         }
     },
     {
-        "model": "levelupapi.game_type",
+        "model": "levelupapi.gametype",
         "pk": 3,
         "fields": {
             "name": "MMO game"
+        }
+    },
+    {
+        "model": "levelupapi.gametype",
+        "pk": 4,
+        "fields": {
+            "name": "card game"
         }
     }
 ]

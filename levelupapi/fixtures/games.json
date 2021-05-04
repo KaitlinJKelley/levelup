@@ -1,0 +1,23 @@
+[
+    {
+        "model": "levelupapi.game",
+        "pk": 1,
+        "fields": {
+            "name": "Uno",
+            "num_of_players": "2 or more",
+            "gametype": 4,
+            "gamer": 1
+        }
+    },
+    {
+        "model": "levelupapi.game",
+        "pk": 2,
+        "fields": {
+            "name": "Sorry",
+            "num_of_players": "2 or more",
+            "gametype": 1,
+            "gamer": 1
+        }
+    }
+
+]
