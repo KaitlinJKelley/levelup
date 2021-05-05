@@ -8,5 +8,9 @@
         }
     ],
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/Users/kaitlinkelley/.pyenv/versions/3.9.1/bin/python"
+    "python.pythonPath": "/Users/kaitlinkelley/.pyenv/versions/3.9.1/bin/python",
+    "python.linting.pylintArgs": [
+        "--django-settings-module=levelup.settings",
+    ]
+    
 }
