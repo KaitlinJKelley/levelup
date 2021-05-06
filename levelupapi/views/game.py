@@ -115,7 +115,7 @@ class Games(ViewSet):
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    def list(self, request):
+    def list(request):
         """Handle GET requests to games resource
 
         Returns:
@@ -128,7 +128,7 @@ class Games(ViewSet):
         #    http://localhost:8000/games?type=1
         #
         # That URL will retrieve all tabletop games
-        game_type = self.request.query_params.get('type', None)
+        game_type = request.query_params.get('type', None)
         if game_type is not None:
             games = games.filter(gametype__id=game_type)
 
