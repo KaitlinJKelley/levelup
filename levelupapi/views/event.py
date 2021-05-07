@@ -23,7 +23,7 @@ class Events(ViewSet):
 
         event = Event()
         event.time = request.data["time"]
-        event.event_date = request.data["date"]
+        event.event_date = request.data["eventDate"]
         event.description = request.data["description"]
         event.organizer = gamer
 
@@ -60,7 +60,7 @@ class Events(ViewSet):
 
         event = Event.objects.get(pk=pk)
         event.description = request.data["description"]
-        event.event_date = request.data["date"]
+        event.event_date = request.data["eventDate"]
         event.time = request.data["time"]
         event.organizer = organizer
 
