@@ -25,9 +25,9 @@ class Games(ViewSet):
         # and set its properties from what was sent in the
         # body of the request from the client.
         game = Game()
-        game.title = request.data["title"]
+        game.name = request.data["name"]
         game.maker = request.data["maker"]
-        game.number_of_players = request.data["numberOfPlayers"]
+        game.num_of_players = request.data["numberOfPlayers"]
         game.skill_level = request.data["skillLevel"]
         game.gamer = gamer
 
@@ -43,7 +43,7 @@ class Games(ViewSet):
         try:
             game.save()
             serializer = GameSerializer(game, context={'request': request})
-            return Response(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         # If anything went wrong, catch the exception and
         # send a response with a 400 status code to tell the
@@ -83,9 +83,9 @@ class Games(ViewSet):
         # creating a new instance of Game, get the game record
         # from the database whose primary key is `pk`
         game = Game.objects.get(pk=pk)
-        game.title = request.data["title"]
+        game.name = request.data["name"]
         game.maker = request.data["maker"]
-        game.number_of_players = request.data["numberOfPlayers"]
+        game.num_of_players = request.data["numberOfPlayers"]
         game.skill_level = request.data["skillLevel"]
         game.gamer = gamer
 
@@ -115,7 +115,7 @@ class Games(ViewSet):
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-    def list(request):
+    def list(self, request):
         """Handle GET requests to games resource
 
         Returns:
