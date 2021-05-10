@@ -14,3 +14,11 @@ class Event(models.Model):
     # And don't need to JOIN therough SQL
     # related_name will be an attribute on Gamer containing all events
     attendees = models.ManyToManyField("Gamer", through=("EventAttendance"), related_name="attending")
+
+    @property
+    def joined(self):
+        return self.__joined
+
+    @joined.setter
+    def joined(self, value):
+        self.__joined = value
