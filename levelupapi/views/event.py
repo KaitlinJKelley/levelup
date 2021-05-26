@@ -33,7 +33,7 @@ class Events(ViewSet):
         try:
             event.save()
             serializer = EventSerializer(event, context={'request': request})
-            return Response(serializer.data)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -47,6 +47,8 @@ class Events(ViewSet):
             event = Event.objects.get(pk=pk)
             serializer = EventSerializer(event, context={'request': request})
             return Response(serializer.data)
+        except Event.DoesNotExist:
+            return Response({}, status=status.HTTP_404_NOT_FOUND)
         except Exception as ex:
             return HttpResponseServerError(ex)
 
